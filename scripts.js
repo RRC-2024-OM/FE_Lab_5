@@ -1,4 +1,4 @@
-// javascript 
+// script.js
 
 function getSelectedValue() {
     const factCount = document.getElementById('factCount').value;
@@ -6,6 +6,7 @@ function getSelectedValue() {
 }
 
 async function displayCatFacts() {
+    console.log('displayCatFacts function called');
     const factCount = getSelectedValue();
     const factsContainer = document.getElementById('factsContainer');
     factsContainer.innerHTML = ''; // Clear previous facts
@@ -26,8 +27,8 @@ async function displayCatFacts() {
     }
 }
 
-// Call displayCatFacts on button click
-document.querySelector('button').addEventListener('click', displayCatFacts);
+// Add event listener for button click
+document.getElementById('getFactsButton').addEventListener('click', displayCatFacts);
 
 function simulateAsyncOperation() {
     return new Promise((resolve) => {
