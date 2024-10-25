@@ -38,3 +38,37 @@ function simulateAsyncOperation() {
 }
 
 console.log('Before calling simulateAsyncOperation');
+
+simulateAsyncOperation().then((message) => {
+    console.log(message);
+});
+
+console.log('After calling simulateAsyncOperation');
+
+async function fetchCatBreeds() {
+    try {
+        const response = await fetch('https://catfact.ninja/breeds');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching cat breeds:', error);
+    }
+}
+
+// Call the function and log the output
+fetchCatBreeds().then((data) => console.log(data));
+
+const samuraiPizzaCats = {
+    leader: "Speedy Cerviche",
+    members: 3,
+    base: {
+        location: "Little Tokyo",
+        name: "Pizza Cat Restaurant",
+    },
+    catchphrase: "It's cheese time!",
+};
+
+// Destructure without redeclaring 'location'
+const { leader, base: { location: baseLocation } } = samuraiPizzaCats;
+console.log(`Leader: ${leader}`);
+console.log(`Location: ${baseLocation}`);
