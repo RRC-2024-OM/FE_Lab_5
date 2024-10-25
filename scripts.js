@@ -25,3 +25,6 @@ async function displayCatFacts() {
         factsContainer.textContent = 'Failed to load cat facts. Please try again later.';
     }
 }
+
+// Call displayCatFacts on button click
+document.querySelector('button').addEventListener('click', displayCatFacts);
